@@ -76,6 +76,25 @@
   .btn-ghost{color:var(--ink-soft);font-size:0.85rem;padding:8px 14px;}
   .btn-ghost:hover{color:var(--cyan);}
   .btn-sm{padding:9px 16px;font-size:0.8rem;}
+  .btn-whatsapp{background:rgba(37,211,102,0.1);color:#3ddc84;border-color:rgba(37,211,102,0.3);}
+  .btn-whatsapp:hover{background:#25d366;color:#062b13;transform:translateY(-2px);}
+
+  /* hero photo */
+  .hero-photo{position:relative;width:150px;margin:0 auto 22px;border-radius:16px;overflow:hidden;border:1px solid var(--line);}
+  .hero-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
+  .frame{position:relative;}
+  .frame::before,.frame::after,.frame .c2::before,.frame .c2::after{
+    content:"";position:absolute;width:18px;height:18px;border-color:var(--cyan);border-style:solid;border-width:0;
+    opacity:0;transition:opacity .35s ease, transform .35s ease;z-index:2;
+  }
+  .frame::before{top:-8px;left:-8px;border-top-width:2px;border-left-width:2px;}
+  .frame::after{top:-8px;right:-8px;border-top-width:2px;border-right-width:2px;}
+  .frame .c2::before{bottom:-8px;left:-8px;border-bottom-width:2px;border-left-width:2px;}
+  .frame .c2::after{bottom:-8px;right:-8px;border-bottom-width:2px;border-right-width:2px;}
+  .frame:hover::before,.frame:hover::after,.frame:hover .c2::before,.frame:hover .c2::after{opacity:1;}
+  .frame:hover::before,.frame:hover .c2::before{transform:translate(-2px,-2px);}
+  .frame:hover::after{transform:translate(2px,-2px);}
+  .frame:hover .c2::after{transform:translate(2px,2px);}
 
   /* ---------- HERO ---------- */
   .hero{padding:100px 0 80px;position:relative;overflow:hidden;isolation:isolate;}
@@ -164,7 +183,10 @@
   .pipeline .arrow svg{width:16px;height:16px;}
 
   /* ---------- PROJECTS ---------- */
-  .proj-featured{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:22px;}
+  .proj-subhead{margin:0 0 20px;padding-top:6px;}
+  .proj-subhead h3{font-size:1.1rem;color:var(--ink);margin-bottom:4px;}
+  .proj-subhead p{font-size:0.85rem;color:var(--ink-dim);}
+  .proj-featured{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:44px;}
   .proj-card{
     position:relative;border:1px solid var(--line);border-radius:var(--radius);
     background:var(--surface);backdrop-filter:blur(12px);transition:border-color .25s, transform .25s;
@@ -316,10 +338,17 @@
       <div class="stack-line">AI Agents<span>•</span>RAG<span>•</span>LLM Applications<span>•</span>Generative AI</div>
       <p class="lead">I build practical AI applications that combine LLMs, retrieval, tools, APIs and business data to automate workflows and solve real-world problems.</p>
       <div class="hero-actions">
+        <a href="https://wa.me/923095408984" target="_blank" class="btn btn-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4C7.1 4 3.2 7.9 3.2 12.7c0 1.55.4 3.03 1.16 4.35L3 21.5l4.55-1.3a9 9 0 0 0 4.35 1.15h.01c4.79 0 8.68-3.9 8.68-8.68a8.6 8.6 0 0 0-2.99-6.35Zm-5.7 13.36h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.7.77.72-2.63-.18-.27a7.34 7.34 0 0 1-1.13-3.93c0-4.06 3.31-7.37 7.38-7.37a7.33 7.33 0 0 1 7.36 7.38c0 4.06-3.31 7.25-7.39 7.25Zm4.04-5.52c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.49.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.59-1.1-1.32-1.24-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.49-1.19-.68-1.63-.18-.43-.36-.37-.49-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87 0 1.1.81 2.17.92 2.32.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.3-.53 1.49-1.04.18-.51.18-.94.13-1.04-.06-.1-.2-.15-.42-.26Z"/></svg>
+          Chat on WhatsApp
+        </a>
         <a href="#projects" class="btn btn-primary">
           View Projects
         </a>
-        <a href="#contact" class="btn btn-outline">Let's Work Together</a>
+        <a href="resume.pdf" download class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0-4-4m4 4 4-4M4 19h16"/></svg>
+          Download Resume
+        </a>
       </div>
       <div class="social-row">
         <a href="https://github.com/madeel0a1" target="_blank">
@@ -338,6 +367,10 @@
     </div>
 
     <div class="hero-visual reveal in">
+      <div class="hero-photo frame">
+        <div class="c2"></div>
+        <img src="profile.png" alt="Muhammad Adeel">
+      </div>
       <div class="flow-card">
         <div class="flow-title">agent_workflow.run() <div class="dots"><span></span><span></span><span></span></div></div>
         <div class="flow-node"><div class="ic">→</div><div><b>Customer Request</b><small>natural language input</small></div></div>
@@ -493,6 +526,10 @@
       <p>GitHub links below open the repositories directly. Placeholder links will be updated as repos are published.</p>
     </div>
 
+    <div class="proj-subhead reveal">
+      <h3>AI/ML Engineering Projects</h3>
+      <p>Agents, RAG and LLM-powered systems — my current direction.</p>
+    </div>
     <div class="proj-featured reveal">
       <!-- PROJECT 1 -->
       <div class="proj-card featured">
@@ -521,7 +558,7 @@
               <span>Gemini API</span><span>LangGraph</span><span>RAG</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span><span>React</span>
             </div>
             <div class="proj-actions">
-              <a href="https://github.com/madeel0a1/ai-customer-support-agent" target="_blank" class="btn btn-outline btn-sm">
+              <a href="https://github.com/madeel0a1/techmart-customer-support-agent" target="_blank" class="btn btn-outline btn-sm">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
                 View on GitHub
               </a>
@@ -607,11 +644,75 @@
       </div>
     </div>
 
+    <div class="proj-subhead reveal" style="margin-top:8px;">
+      <h3>Data Science &amp; Machine Learning Foundation</h3>
+      <p>Computer vision, classification and analytics work that built the foundation for my AI engineering direction.</p>
+    </div>
     <div class="proj-grid-sub reveal">
       <!-- PROJECT 3 -->
       <div class="proj-card compact">
         <div class="proj-top">
           <span class="proj-index">03</span>
+          <span class="proj-tag">ASSISTIVE AI • COMPUTER VISION</span>
+        </div>
+        <h3>Third Eye — Assistant for Visually Impaired</h3>
+        <p class="proj-problem"><b>Problem:</b> Visually impaired users need real-time understanding of their surroundings, text and currency.</p>
+        <p class="proj-solution"><b>Solution:</b> A real-time multi-module assistive system combining scene description (BLIP), object detection (YOLO11), text extraction (EasyOCR) and a fine-tuned DenseNet121 model for currency recognition, with voice feedback.</p>
+        <div class="proj-stack">
+          <span>YOLO11</span><span>BLIP</span><span>EasyOCR</span><span>DenseNet121</span><span>gTTS</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/madeel0a1/AI-Powered-Third-Eye-for-Visually-Impaired-Persons" target="_blank" class="btn btn-outline btn-sm">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="proj-card compact">
+        <div class="proj-top">
+          <span class="proj-index">04</span>
+          <span class="proj-tag">COMPUTER VISION • MEDICAL IMAGING</span>
+        </div>
+        <h3>Spine Disease Detection System</h3>
+        <p class="proj-problem"><b>Problem:</b> Reading spinal MRI scans for multiple disorder types is slow and requires specialist attention.</p>
+        <p class="proj-solution"><b>Solution:</b> A CNN-based system (EfficientNetV2S) that detects and classifies spinal disorders — Neural Foraminal Narrowing, Subarticular Stenosis, Spinal Canal Stenosis — from the RSNA Lumbar Spine dataset, reaching 95% classification accuracy.</p>
+        <div class="proj-stack">
+          <span>PyTorch</span><span>EfficientNetV2S</span><span>DICOM</span><span>Augmentation</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/madeel0a1/Spine-disease-Detection-" target="_blank" class="btn btn-outline btn-sm">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="proj-card compact">
+        <div class="proj-top">
+          <span class="proj-index">05</span>
+          <span class="proj-tag">ENSEMBLE ML • HEALTHCARE</span>
+        </div>
+        <h3>Heart Disease Prediction</h3>
+        <p class="proj-problem"><b>Problem:</b> Early identification of heart disease risk needs a reliable, data-driven model.</p>
+        <p class="proj-solution"><b>Solution:</b> A web app predicting heart disease likelihood via EDA and correlation analysis, using an ensemble of XGBoost, LightGBM and CatBoost, reaching ~0.956 AUC.</p>
+        <div class="proj-stack">
+          <span>XGBoost</span><span>LightGBM</span><span>CatBoost</span><span>EDA</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/madeel0a1/heart-disease-prediction" target="_blank" class="btn btn-outline btn-sm">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 6 -->
+      <div class="proj-card compact">
+        <div class="proj-top">
+          <span class="proj-index">06</span>
           <span class="proj-tag">BUSINESS • ML</span>
         </div>
         <h3>Marketing Budget Optimizer</h3>
@@ -628,10 +729,10 @@
         </div>
       </div>
 
-      <!-- PROJECT 4 -->
+      <!-- PROJECT 7 -->
       <div class="proj-card compact">
         <div class="proj-top">
-          <span class="proj-index">04</span>
+          <span class="proj-index">07</span>
           <span class="proj-tag">ML • CLASSIFICATION</span>
         </div>
         <h3>Customer Churn Prediction</h3>
@@ -648,10 +749,10 @@
         </div>
       </div>
 
-      <!-- PROJECT 5 -->
+      <!-- PROJECT 8 -->
       <div class="proj-card compact">
         <div class="proj-top">
-          <span class="proj-index">05</span>
+          <span class="proj-index">08</span>
           <span class="proj-tag">DATA • INSIGHTS</span>
         </div>
         <h3>E-Commerce Customer Analysis</h3>
@@ -668,10 +769,10 @@
         </div>
       </div>
 
-      <!-- PROJECT 6 -->
+      <!-- PROJECT 9 -->
       <div class="proj-card compact">
         <div class="proj-top">
-          <span class="proj-index">06</span>
+          <span class="proj-index">09</span>
           <span class="proj-tag">NLP • RECOMMENDATION</span>
         </div>
         <h3>Movie Recommendation System</h3>
@@ -766,9 +867,17 @@
         <h2>Have a business workflow that could be automated?</h2>
         <p>Let's explore whether AI can turn it into a faster, smarter workflow.</p>
         <div class="contact-actions">
+          <a href="https://wa.me/923095408984" target="_blank" class="btn btn-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 11.9 4C7.1 4 3.2 7.9 3.2 12.7c0 1.55.4 3.03 1.16 4.35L3 21.5l4.55-1.3a9 9 0 0 0 4.35 1.15h.01c4.79 0 8.68-3.9 8.68-8.68a8.6 8.6 0 0 0-2.99-6.35Zm-5.7 13.36h-.01a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.7.77.72-2.63-.18-.27a7.34 7.34 0 0 1-1.13-3.93c0-4.06 3.31-7.37 7.38-7.37a7.33 7.33 0 0 1 7.36 7.38c0 4.06-3.31 7.25-7.39 7.25Zm4.04-5.52c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.49.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.1-.66-.59-1.1-1.32-1.24-1.54-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.49-1.19-.68-1.63-.18-.43-.36-.37-.49-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87 0 1.1.81 2.17.92 2.32.11.15 1.6 2.44 3.87 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.06 1.3-.53 1.49-1.04.18-.51.18-.94.13-1.04-.06-.1-.2-.15-.42-.26Z"/></svg>
+            Chat on WhatsApp
+          </a>
           <a href="mailto:muhammadadeel0a1@gmail.com" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
             Let's Work Together
+          </a>
+          <a href="resume.pdf" download class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0-4-4m4 4 4-4M4 19h16"/></svg>
+            Resume
           </a>
           <a href="https://github.com/madeel0a1" target="_blank" class="btn btn-outline">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
